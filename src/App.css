@@ -1,3 +1,8 @@
+body, html {
+  background: url('./stylesheets/images/grassanch.png') repeat;
+  background-size: 30%;   
+}
+
 .App {
   text-align: center;
 }

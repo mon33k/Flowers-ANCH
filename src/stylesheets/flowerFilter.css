@@ -6,6 +6,10 @@ html, body {
 .main-container {
     display: flex;
     flex-direction: column;
-    background: url('./images/grassanch.png') repeat;
-    background-size: 50%;   
+    margin: 0px;
+}
+
+.leftNav {
+    display: flex;
+    flex-direction: row;
 }
