@@ -1,41 +1,49 @@
 {
     "mainBreeds":[
         {
+            "id": 1,
             "name": "Cosmos",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "orange", "black"]
         },
         {
+            "id": 2,
             "name": "Hyacinths",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "orange", "blue", "purple"]
         },
         {
+            "id": 3,
             "name": "Lilies",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "orange", "black"]
         },
         {
+            "id": 4,
             "name": "Mums",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "purple", "green"]
         },
         {
+            "id": 5,
             "name": "Pansies",
             "seedColors": ["white", "red", "blue", "yellow"],
             "hybridColors": ["orange", "blue", "purple"]
         },
         {
+            "id": 6,
             "name": "Tulips",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "orange", "purple", "black"]
         },  
         {
+            "id": 7,
             "name": "Roses",
             "seedColors": ["red", "white", "yellow"],
             "hybridColors": ["pink", "orange", "blue","purple","black","gold"]
         },
         {
+            "id": 8,
             "name": "Windflowers",
             "seedColors": ["red", "white", "orange"],
             "hybridColors": ["pink", "blue", "purple"]

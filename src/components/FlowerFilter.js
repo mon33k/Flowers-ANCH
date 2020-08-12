@@ -7,16 +7,31 @@ class FlowerFilter extends Component {
     constructor() {
         super()
         this.state = {
-            // flowers: []
+            flowerNames: []
         }
+
+        this.handleClickMainFlower = this.handleClickMainFlower.bind(this);
     }
 
 componentDidMount(){
-    // const {flowers} = this.state
-    flowerData.forEach(element => {
-        console.log("flower json", element)
-    });
+    this.getFlowerNames()
 }
+
+    getFlowerNames() {
+        const {flowerNames} = this.state
+        const flowerNameArr = flowerData.mainBreeds.map(elem => {
+            return {id: elem.id, name: elem.name}
+        });
+        console.log("flowerNameArr", flowerNameArr)
+        this.setState({
+            flowerNames: flowerNameArr
+        })
+    }
+
+    handleClickMainFlower(e) {
+        e.preventDefault();
+        console.log("clicked flower ", e.target.innerHTML)
+    }
 
 
     render() {
@@ -25,7 +40,6 @@ componentDidMount(){
                 <h1>Filter Flowers</h1>
                 <div className="leftNav col-md-4">
                     <DropdownButton
-                        as='ButtonGroup'
                         key='right'
                         id='dropdown-button-drop-right'
                         drop='right'
@@ -33,11 +47,9 @@ componentDidMount(){
                         size='lg'
                         title='Select Flower Breed'
                     >
-                        <Dropdown.Item eventKey="1">Action</Dropdown.Item>
-                        <Dropdown.Item eventKey="2">Another action</Dropdown.Item>
-                        <Dropdown.Item eventKey="3">Something else here</Dropdown.Item>
-                        <Dropdown.Divider />
-                        <Dropdown.Item eventKey="4">Separated link</Dropdown.Item>
+                        {this.state.flowerNames.map(mainFlower => (
+                            <Dropdown.Item key={mainFlower.id} onClick={this.handleClickMainFlower} value={mainFlower.name}>{mainFlower.name}</Dropdown.Item>
+                        ))}
                     </DropdownButton>
                 </div>
             </div>
