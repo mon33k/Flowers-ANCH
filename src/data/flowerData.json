@@ -2,51 +2,186 @@
     "mainBreeds":[
         {
             "id": 1,
-            "name": "Cosmos",
+            "name": "cosmos",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "orange", "black"]
+            "hybridColors": [
+                {
+                    "color": "pink", 
+                    "combo": ["red", "white"]
+                }, 
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                }, 
+                {
+                    "color": "black",
+                    "combo": ["orange", "orange"]
+                }
+            ]
         },
         {
             "id": 2,
-            "name": "Hyacinths",
+            "name": "hyacinths",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "orange", "blue", "purple"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["red", "white"]
+                }, 
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                }, 
+                {
+                    "color": "blue",
+                    "combo": ["white", "white"]
+                }, 
+                {
+                    "color": "purple",
+                    "combo": ["blue", "blue"]
+                }
+            ]
         },
         {
             "id": 3,
-            "name": "Lilies",
+            "name": "lilies",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "orange", "black"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["red", "white"]
+                },
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                }, 
+                {
+                    "color": "black",
+                    "combo": ["red", "red"]
+                }
+            ]
         },
         {
             "id": 4,
-            "name": "Mums",
+            "name": "mums",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "purple", "green"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["red", "white"]
+                }, 
+                {
+                    "color": "purple",
+                    "combo": ["white", "white"]
+                }, 
+                {
+                    "color": "green",
+                    "combo": ["purple", "purple"]
+                }
+            ]
         },
         {
             "id": 5,
-            "name": "Pansies",
+            "name": "pansies",
             "seedColors": ["white", "red", "blue", "yellow"],
-            "hybridColors": ["orange", "blue", "purple"]
+            "hybridColors": [
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                },
+                {
+                    "color": "blue",
+                    "combo": ["white", "white"]
+                },
+                {
+                    "color": "purple",
+                    "combo": ["blue", "blue"]
+                }
+            ]
         },
         {
             "id": 6,
-            "name": "Tulips",
+            "name": "tulips",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "orange", "purple", "black"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["red", "white"]
+                }, 
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                }, 
+                {
+                    "color": "purple",
+                    "combo": ["black", "black"]
+                }, 
+                {
+                    "color": "black",
+                    "combo": ["red", "red"]
+                }
+            ]
         },  
         {
             "id": 7,
-            "name": "Roses",
+            "name": "roses",
             "seedColors": ["red", "white", "yellow"],
-            "hybridColors": ["pink", "orange", "blue","purple","black","gold"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["red", "white"]
+                }, 
+                {
+                    "color": "orange",
+                    "combo": ["red", "yellow"]
+                }, 
+                {
+                    "color": "blue",
+                    "combo": ["red", "red"]
+                },
+                {
+                    "color": "purple",
+                    "combo": ["white", "white"]
+                }, 
+                {
+                    "color": "black",
+                    "combo": ["red", "red"]
+                }
+            ]
         },
         {
             "id": 8,
-            "name": "Windflowers",
+            "name": "windflowers",
             "seedColors": ["red", "white", "orange"],
-            "hybridColors": ["pink", "blue", "purple"]
+            "hybridColors": [
+                {
+                    "color": "pink",
+                    "combo": ["orange", "red"]
+                }, 
+                {
+                    "color": "blue",
+                    "combo": ["white", "white"]
+                }, 
+                {
+                    "color": "purple",
+                    "combo": ["red", "red"]  
+                }
+            ]
+        }
+    ],
+    "specialFlowers": [
+        {
+            "id": 9,
+            "name": "Roses",
+            "colors": "gold",
+            "description": ""
+        },
+        { 
+            "id": 10,
+            "name": "violet",
+            "colors": "",
+            "description": ""
         }
     ]
+
 }
