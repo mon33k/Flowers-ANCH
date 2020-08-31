@@ -13,3 +13,10 @@ html, body {
     display: flex;
     flex-direction: row;
 }
+
+.flower-container {
+    align-self: center;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+}

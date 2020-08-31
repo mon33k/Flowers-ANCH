@@ -112,12 +112,15 @@ class FlowerFilter extends Component {
                         ))}
                     </DropdownButton>
                 </div>
-                <div>
+                <div className="flower-container">
+                    <div>
                     {displayedFlowers.length !== 0 ? displayedFlowers.colors.map(color => (
                             <img onClick={this.handleClickHybridFlower} name={color} id={displayedFlowers.id} key={Math.random(displayedFlowers.id)} src={require(`../stylesheets/images/anchflowers/${displayedFlowers.name}/NH-${color}_${displayedFlowers.name}-icon.png`)}/>
                     )) : ""}
-                </div>
+                    </div>
                         {displayedFlowers.clickedColor ? <FlowerInfo displayedFlowers={displayedFlowers} /> : ""}
+                </div>
+                
             </div>
         )
     }
