@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../stylesheets/flowerFilter.css';
 import {Dropdown, DropdownButton} from 'react-bootstrap';
 import flowerData from '../data/flowerData.json';
-
+import FlowerInfo from './FlowerInfo';
 
 class FlowerFilter extends Component {
     constructor() {
@@ -48,28 +48,33 @@ class FlowerFilter extends Component {
                 return elem
             } 
         })
-        // console.log("flower image", flowerImage.mainColorArr)
         this.setState({
             displayedFlowers: {'id': id, 'name': flower, 'colors': flowerImage.colorArr}
         })
     }
 
     getHybridFlowerImages(color, id) {
-        console.log("color, id ", color, id)
+        // console.log("color, id ", color, id)
         let flowerImage = this.state.hybridFlowers.find(elem => {
             if(elem.id.toString() === id ){
                 return elem
             }
         })
+
         let hybridFlower = []
+        let hybridFlowerCombo = []
         flowerImage.colorArr.forEach(e => {
             if(e.combo.includes(color)){
+                hybridFlowerCombo.push(e.combo)
+                hybridFlower.push(e.color)
+            } else if (e.color === color) {
+                hybridFlowerCombo.push(e.combo)
                 hybridFlower.push(e.color)
             }
         })
-        console.log("flowerImage ", this.state.displayedFlowers.name)
+
         this.setState({
-            displayedFlowers: {'id': id, 'name': this.state.displayedFlowers.name, 'colors': hybridFlower} 
+            displayedFlowers: {'id': id, 'name': this.state.displayedFlowers.name, 'colors': hybridFlower, 'combo': hybridFlowerCombo, 'clickedColor': color} 
         })
     } 
 
@@ -89,8 +94,7 @@ class FlowerFilter extends Component {
 
     render() {
         const {displayedFlowers} = this.state
-        console.log("diplayedFlowers ", this.state.displayedFlowers)
-        // console.log("hybrid flowers -> ", this.state.hybridFlowers)
+
         return (
             <div className='main-container'>
                 <h1>Filter Flowers</h1>
@@ -113,7 +117,7 @@ class FlowerFilter extends Component {
                             <img onClick={this.handleClickHybridFlower} name={color} id={displayedFlowers.id} key={Math.random(displayedFlowers.id)} src={require(`../stylesheets/images/anchflowers/${displayedFlowers.name}/NH-${color}_${displayedFlowers.name}-icon.png`)}/>
                     )) : ""}
                 </div>
-
+                        {displayedFlowers.clickedColor ? <FlowerInfo displayedFlowers={displayedFlowers} /> : ""}
             </div>
         )
     }
