@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch, Link} from 'react-router-dom';
 import LandingPage from './LandingPage';
 import FlowerFilter from './FlowerFilter';
+import VillagerFilter from './VillagerFilter'
 import '../stylesheets/navbar.css';
 
 const NavBar = () => {
@@ -9,8 +10,8 @@ const NavBar = () => {
         <div>
             <nav className='navigationBar'>
                 <Link to='/landing'>Home</Link>
-                <br></br>
                 <Link to='/allFlowers'>Flowers</Link>
+                <Link to='/allVillagers'>Villagers</Link>
             </nav>
             
             <Switch>
@@ -19,6 +20,9 @@ const NavBar = () => {
                 </Route>
                 <Route path='/allFlowers'>
                     <FlowerFilter/>
+                </Route>
+                <Route>
+                    <VillagerFilter path='/allVillagers'/>
                 </Route>
             </Switch>
         </div>

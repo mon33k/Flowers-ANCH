@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@700&display=swap'); 
+
+.main-villager-container {
+    display: flex;
+    background-color: #9e8364;
+    flex-direction: column;
+    margin: 0px;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+}
+
+.villager-container {
+    display: flex;
+
+}
+
+.villager-header {
+    flex-direction: column;
+    font-family: 'Enriqueta', serif;
+    color: #bba993;
+}

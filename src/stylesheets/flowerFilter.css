@@ -1,12 +1,20 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-}
-.main-container {
+@import url('https://fonts.googleapis.com/css2?family=Enriqueta:wght@700&display=swap'); 
+
+.main-flower-container {
     display: flex;
     flex-direction: column;
     margin: 0px;
+    background-color:#1c7c24;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 600px;
+}
+
+.filterHeader {
+    color:#7a904d;
+    font-family: 'Enriqueta', serif;
+    padding-top: 46px;
 }
 
 .leftNav {
@@ -15,8 +23,27 @@ html, body {
 }
 
 .flower-container {
+    display: flex;
     align-self: center;
-    background-color: white;
-    width: 500px;
-    height: 500px;
+    align-items: center;
+    background-color: #9e8364;
+    padding: 92px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: 80%;
 }
+
+.flowerFilterDropdown-btn {
+    border-radius: 10px;
+    background-color: #d8ccb6;
+    margin-bottom: 20px;
+    height: 42px;
+    /* font-family: 'Enriqueta', serif; */
+}
+
+.flowerFilterDropdown {
+    width: 220px;
+    margin: 20px;
+}
+

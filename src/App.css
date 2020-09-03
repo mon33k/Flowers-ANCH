@@ -1,6 +1,9 @@
-body, html {
-  background: url('./stylesheets/images/grassanch.png') repeat;
-  background-size: 30%;   
+html {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100%;
 }
 
 .App {
