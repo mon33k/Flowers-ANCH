@@ -5,9 +5,11 @@ import "../stylesheets/flowerInfo.css"
 const FlowerInfo = (props) => { 
 
     let flowerToShow = props.displayedFlowers
+
+    console.log('props.displayedFlowers -->  ', props.displayedFlowers)
         return (
             <div className="flowerInfoList">
-                {props.displayedFlowers.combo.length === 1 ? 
+                {/* {props.displayedFlowers.colors.length >= 1 ? 
                 <ul>
                     <li>Breed: {flowerToShow.name}</li>
                     <li>Color: {flowerToShow.clickedColor}</li>
@@ -17,7 +19,7 @@ const FlowerInfo = (props) => {
                     
                 </ul>
                 : ""
-                }
+                } */}
             </div>
         )
 }

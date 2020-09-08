@@ -29,15 +29,21 @@ class VillagerFilter extends Component {
     }
 
     getAllVillagers() {
+        let a = [{"species": '', 'id': 0}]
+        
+        
         axios.get(`http://acnhapi.com/v1/villagers`).then(res => {
-            console.log('ressssssss ---> ', res.data)
-            let stuff = [res.data]
-
-            console.log('res', stuff)
-            this.setState({
-                allVillagers: res.data
-            })
+            let largeObj = res.data
+            for (const villagerObj in largeObj) {
+                console.log('species to insert in arr --->', largeObj[villagerObj].species)
+                // if(a["species"] !== largeObj[villagerObj.species]) {
+                //     a.push({"species": largeObj[villagerObj].species, "id": villagerObj.id})
+                // }
+                
+            }
         })
+
+        console.log("speciesArr ---> ", a)
     }
 
     render() {
