@@ -21,3 +21,20 @@
     font-family: 'Enriqueta', serif;
     color: #bba993;
 }
+
+.villagerFilterDropdown {
+    width: 220px;
+    margin: 20px;
+}
+
+.villagerPersonality-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 50%;
+
+}
+
+.personality-item {
+    padding-right: 10px;
+}

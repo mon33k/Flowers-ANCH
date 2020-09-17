@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../stylesheets/villagerFilter.css';
-import { Form, Row, Col, Image} from 'react-bootstrap';
+import { Form, Row, Col, Image, DropdownButton, Dropdown} from 'react-bootstrap';
 
 const axios = require('axios');
 
@@ -14,14 +14,17 @@ class VillagerFilter extends Component {
             //clicked villager
             clickedVillager: [],
             //personality
-            personalitySelected: [],
+            personality: [],
             //species
-            speciesSelected: [],
+            species: [],
             //gender
             genderSelected:[],
             //hobby
             hobbySelected: []
         }
+
+        this.handleClickSpecies = this.handleClickSpecies.bind(this);
+
     }
 
     componentDidMount() {
@@ -29,21 +32,34 @@ class VillagerFilter extends Component {
     }
 
     getAllVillagers() {
-        let a = [{"species": '', 'id': 0}]
-        
-        
+        let speciesArr = []
+        let personalityArr = []
+        let dataArr = []
+
         axios.get(`http://acnhapi.com/v1/villagers`).then(res => {
             let largeObj = res.data
+            
             for (const villagerObj in largeObj) {
-                console.log('species to insert in arr --->', largeObj[villagerObj].species)
-                // if(a["species"] !== largeObj[villagerObj.species]) {
-                //     a.push({"species": largeObj[villagerObj].species, "id": villagerObj.id})
-                // }
-                
+                //console.log('each elem ', largeObj[villagerObj])
+                dataArr.push(largeObj[villagerObj])
+                if(!speciesArr.includes(`${largeObj[villagerObj].species}`)) { // ** want to reverse the value and the key **
+                    speciesArr.push(largeObj[villagerObj].species)
+                } else if (!personalityArr.includes(`${largeObj[villagerObj].personality}`)) {
+                    personalityArr.push(`${largeObj[villagerObj].personality}`)
+                } 
             }
-        })
 
-        console.log("speciesArr ---> ", a)
+            this.setState({
+                allVillagers: dataArr,
+                species: speciesArr,
+                personality: personalityArr
+            })
+        })
+    }
+
+    handleClickSpecies(e) {
+        e.preventDefault();
+        console.log("valueee ==> ", e.target.value)
     }
 
     render() {
@@ -51,6 +67,7 @@ class VillagerFilter extends Component {
             <div className='main-villager-container'>
                 <h1 className='villager-header'>Villager Filter</h1>
                 <div className='form-container'>
+                
                 <Form>
                         <Form.Group as={Row}>
                             <Form.Label column sm={2}> 
@@ -60,30 +77,38 @@ class VillagerFilter extends Component {
                                 <Form.Control type="search" placeholder="search" />
                             </Col>
                         </Form.Group>
+
+                        <div className="villagerFilterDropdown">
+                            <DropdownButton
+                                key='right'
+                                id='dropdown-button-drop-right'
+                                drop='right'
+                                variant=""
+                                size='lg'
+                                title='Select Villager Species'
+                                className='villagerFilterDropdown-btn'
+                            >
+                                {this.state.species.map((villager, i) => (
+                                    <Dropdown.Item as="button" key={i} onClick={this.handleClickSpecies} value={villager}>{villager}</Dropdown.Item>
+                                ))}
+                            </DropdownButton>
+                        </div>
+
                         <fieldset>
                             <Form.Group as={Row}>
                                 <Form.Label as="legend" column sm={2}>
                                     Choose personality
                                 </Form.Label>
-                                <Col sm={10}>
-                                    <Form.Check
+                                <Col sm={10} className="villagerPersonality-container">
+                                    {this.state.personality.map((personalityItem, i) => (
+                                        <Form.Check
                                         type="radio"
-                                        label="first radio"
+                                        label={`${personalityItem}`}
                                         name="formHorizontalRadios"
-                                        id="formHorizontalRadios1"
+                                        key={`${i}`}
+                                        className='personality-item'
                                     />
-                                    <Form.Check
-                                        type="radio"
-                                        label="second radio"
-                                        name="formHorizontalRadios"
-                                        id="formHorizontalRadios2"
-                                    />
-                                    <Form.Check
-                                        type="radio"
-                                        label="third radio"
-                                        name="formHorizontalRadios"
-                                        id="formHorizontalRadios3"
-                                    />
+                                    ))}
                                 </Col>
                             </Form.Group>
                         </fieldset>
